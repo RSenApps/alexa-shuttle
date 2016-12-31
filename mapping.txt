@@ -1,0 +1,39 @@
+kendall, 01
+kendall square, 01
+amherst at wadsworth, 07
+amherst street at wadsworth, 07
+media lab, 60
+m.i.t. media lab, 60
+kresge, 61
+kresge oval, 61
+kresge turnaround, 61
+massy, 61
+massy hall, 61
+mccormick, 61
+mccormick hall, 61
+burton house, 16
+burton conner, 16
+burton, 16
+baker house, 16
+baker, 16
+macgregor, 16
+macgregor house, 16
+new house, 51
+fanew, 51
+next house, 51
+next, 51
+tang hall, 51
+tang, 51
+westgate, 51
+w 92, 57
+w 92 at amesbury street, 57
+w 98, 67
+w 98 at vassar street, 67
+simmons hall, 47
+simmons, 47
+the sponge, 47
+vassar street at mass ave, 52
+vassar at mass, 52
+vassar street at massachusetts avenue, 52
+stata center, 48
+stata, 48
