@@ -2,7 +2,7 @@ from __future__ import print_function
 import urllib
 import xml.etree.ElementTree as ET
 
-name_to_stop = {'kendall': '01', 'mccormick': '61', 'm.i.t. media lab': '60', 'media lab': '60', 'kresge oval': '61', 'fanew': '51', 'burton': '16', 'simmons hall': '47', 'amherst at wadsworth': '07', 'w 98 at vassar street': '67', 'massy hall': '61', 'kresge turnaround': '61', 'tang hall': '51', 'macgregor': '16', 'the sponge': '47', 'massy': '61', 'next': '51', 'westgate': '51', 'amherst street at wadsworth': '07', 'burton house': '16', 'vassar at mass': '52', 'mccormick hall': '61', 'stata': '48', 'w 92 at amesbury street': '57', 'w 92': '57', 'w 98': '67', 'vassar street at mass ave': '52', 'next house': '51', 'kendall square': '01', 'new house': '51', 'tang': '51', 'macgregor house': '16', 'vassar street at massachusetts avenue': '52', 'baker house': '16', 'simmons': '47', 'kresge': '61', 'stata center': '48', 'burton conner': '16', 'baker': '16'}
+name_to_stop = {'kendall': '01', 'mccormick': '61', 'm.i.t. media lab': '60', 'media lab': '60', 'kresge oval': '61', 'fanew': '51', 'burton': '16', 'simmons hall': '47', 'amherst at wadsworth': '07', 'w 98 at vassar street': '67', 'massy hall': '61', 'kresge turnaround': '61', 'tang hall': '51', 'macgregor': '16', 'the sponge': '47', 'massy': '61', 'next': '51', 'westgate': '51', 'amherst street at wadsworth': '07', 'burton house': '16', 'vassar at mass': '52', 'mccormick hall': '61', 'stata': '48', 'w 92 at amesbury street': '57', 'w 92': '57', 'w 98': '67', 'vassar street at mass ave': '52', 'next house': '51', 'kendall square': '01', 'new house': '51', 'tang': '51', 'macgregor house': '16', 'vassar street at massachusetts avenue': '52', 'baker house': '16', 'simmons': '47', 'kresge': '61', 'stata center': '48', 'burton conner': '16', 'baker': '16', 'theta chi':'29'}
 name_to_route = {'tech': 'tech', 'tech shuttle': 'tech', 'saferide campus': 'saferidecampshut', 'saferide campus shuttle': 'saferidecampusshut'} 
 
 base_url = "http://webservices.nextbus.com/service/publicXMLFeed?command=predictions&a=mit"
@@ -17,7 +17,7 @@ def build_speechlet_response(title, output, reprompt_text, should_end_session):
         },
         'card': {
             'type': 'Simple',
-            'title': "Simmons Shuttles - " + title,
+            'title': "OX Shuttles - " + title,
             'content': output
         },
         'reprompt': {
@@ -70,7 +70,7 @@ def get_next_shuttle(intent, session):
         predictions = get_predictions(intent['slots']['Stop']['value'])
     """
 
-    predictions = get_predictions('simmons')
+    predictions = get_predictions('theta chi')
 
     if len(predictions[1]) == 0:
         speech_output = "There are no shuttles from {} right now.".format(predictions[0])
@@ -107,8 +107,8 @@ def on_help(launch_request, session):
     """ Called when the user requests help
     """
 
-    card_title = "Welcome to Simmons Shuttles"
-    speech_output = "Welcome to Simmons Shuttles. You can request upcoming shuttles by asking, when is the next shuttle. All upcoming shuttles will be returned, with the soonest to arrive coming first."
+    card_title = "Welcome to OX Shuttles"
+    speech_output = "Welcome to OX Shuttles. You can request upcoming shuttles by asking, when is the next shuttle. All upcoming shuttles will be returned, with the soonest to arrive coming first."
     reprompt_text = "You can request upcoming shuttles by asking, when is the next shuttle. All upcoming shuttles will be returned, with the soonest to arrive coming first."
     
     return build_response({}, build_speechlet_response(
@@ -130,7 +130,7 @@ def lambda_handler(event, context):
     function.
     """
     if (event['session']['application']['applicationId'] !=
-            "amzn1.ask.skill.066c65ca-3fd7-472b-afa9-5208bd634e94"):
+            "amzn1.ask.skill.75e36d03-ab7c-4513-bb9c-eae61d787de6"):
         raise ValueError("Invalid Application ID")
 
     if event['request']['type'] == "IntentRequest":
